@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ProductForm from "./components/ProductForm";
+import ProductList from "./components/ProductList";
+import { useState } from "react";
+
 
 function App() {
+  const [refresh, setRefresh] = useState(false);
+
+  const reload = () => {
+    setRefresh(!refresh);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container py-4">
+      <h1 className="text-center mb-5">🪙 Mi Pequeña Joya</h1>
+      <ProductForm onAdded={reload} />
+      <hr />
+      <ProductList key={String(refresh)} />
     </div>
   );
 }

@@ -1,46 +1,84 @@
-# Getting Started with Create React App
+# 💎 Frontend - Mi Pequeña Joya
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es el frontend del test técnico **"Mi Pequeña Joya"**, una tienda de joyería donde puedes gestionar productos desde un panel de administración amigable.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ⚙️ Tecnologías utilizadas
 
-### `npm start`
+- React 18 + TypeScript
+- Bootstrap 5
+- Fetch API (para consumir el backend)
+- Arquitectura basada en componentes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📁 Estructura del proyecto
 
-### `npm test`
+```
+src/
+├── api/             # Conexión con el backend (GET, POST, etc.)
+├── components/      # Componentes reutilizables (tarjetas, formularios)
+├── interfaces/      # Tipos TypeScript (ej: Product)
+├── App.tsx          # Contenedor principal
+└── index.tsx        # Punto de entrada
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🚀 Cómo ejecutar el frontend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clona o descarga el proyecto
+2. Instala las dependencias:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Inicia el servidor de desarrollo:
 
-### `npm run eject`
+```bash
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+La app correrá en `http://localhost:3000`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> ⚠️ Asegúrate de tener el backend corriendo en `http://localhost:8080`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 🔌 Conexión con el backend
 
-## Learn More
+El frontend se conecta al backend en los siguientes endpoints:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `GET /products`: obtiene productos
+- `POST /products`: agrega un nuevo producto
+- `POST /products/{id}/sell`: descuenta stock del producto
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Esto se gestiona desde `src/api/productApi.ts`.
+
+---
+
+## 📦 Funcionalidades implementadas
+
+### ✅ Vista de productos
+- Muestra productos en tarjetas Bootstrap
+- Indica si hay stock o no
+- Permite vender una cantidad específica por tarjeta
+
+### ✅ Formulario para agregar producto
+- Validación de campos obligatorios
+- Carga en tiempo real a la lista
+
+---
+
+## 🎨 Diseño
+- Responsive y limpio
+- Uso de Bootstrap para estilos
+- Botones y campos organizados visualmente
+
+---
+
+## 👨‍💻 Autor
+
+Desarrollado por Felipe Rodríguez como prueba técnica fullstack.
