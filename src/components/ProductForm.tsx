@@ -40,7 +40,7 @@ const ProductForm = ({ onAdded }: Props) => {
     <div className="container my-4  p-4 rounded shadow-sm bg-white">
       <h4 className="mb-4">Agregar Producto</h4>
       <form onSubmit={handleSubmit}>
-        <div className="mb-2">
+        <div className="form-floating mb-2">
           <input
             name="name"
             className="form-control"
@@ -48,8 +48,9 @@ const ProductForm = ({ onAdded }: Props) => {
             value={form.name}
             onChange={handleChange}
           />
+          <label htmlFor="floatingInput">Nombre</label>
         </div>
-        <div className="mb-2">
+        <div className="form-floating mb-2">
           <input
             name="description"
             className="form-control"
@@ -57,8 +58,9 @@ const ProductForm = ({ onAdded }: Props) => {
             value={form.description}
             onChange={handleChange}
           />
+          <label htmlFor="floatingInput">Descripción</label>
         </div>
-        <div className="mb-2">
+        <div className="form-floating mb-2">
           <input
             name="category"
             className="form-control"
@@ -66,18 +68,24 @@ const ProductForm = ({ onAdded }: Props) => {
             value={form.category}
             onChange={handleChange}
           />
+          <label htmlFor="floatingInput">Categoría</label>
         </div>
-        <div className="mb-2">
-          <input
-            name="price"
-            type="number"
-            className="form-control"
-            placeholder="Precio"
-            value={form.price ? form.price : ""}
-            onChange={handleChange}
-          />
+        <div className=" input-group  mb-2">
+          <span className="input-group-text">$</span>
+          <div className="form-floating flex-grow-1">
+            <input
+              name="price"
+              type="number"
+              className="form-control"
+              placeholder="Precio"
+              value={form.price ? form.price : ""}
+              onChange={handleChange}
+            />
+            <label htmlFor="floatingInput">Precio</label>
+            
+          </div>
         </div>
-        <div className="mb-2">
+        <div className="form-floating mb-2"> 
           <input
             name="stock"
             type="number"
@@ -86,6 +94,7 @@ const ProductForm = ({ onAdded }: Props) => {
             value={form.stock ? form.stock : ""}
             onChange={handleChange}
           />
+          <label htmlFor="floatingInput">Stock</label>
         </div>
 
         {error && <div className="text-danger mb-2">{error}</div>}
