@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Product } from "../interfaces/Product";
 import { sellProduct } from "../api/productApi";
+import {ModalConfirm} from "./ModalConfirm";
+import Swal from "sweetalert2";
 
 interface Props {
   product: Product;
@@ -16,10 +18,18 @@ const ProductCard = ({ product, onSold }: Props) => {
       setMessage("Cantidad inválida");
       return;
     }
-
-    const result = await sellProduct(product.id, quantity);
-    setMessage(result);
-    onSold(); // actualiza la lista
+    const confirmed = await ModalConfirm();
+    if (confirmed) {
+      Swal.fire({
+        title: "¡Vendido!",
+        text: `Se han vendido ${quantity} unidades de ${product.name}.`,
+        icon: "success"
+      });
+      const result = await sellProduct(product.id, quantity);
+      console.log(result);
+      onSold();
+    }
+    
   };
 
   return (
@@ -45,10 +55,10 @@ const ProductCard = ({ product, onSold }: Props) => {
                 onChange={(e) => setQuantity(parseInt(e.target.value))}
               />
               <button className="btn btn-primary" onClick={handleSell}>Vender</button>
+
             </div>
           </>
         )}
-
         {message && <small className="text-info">{message}</small>}
       </div>
     </div>

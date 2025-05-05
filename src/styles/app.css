@@ -1,13 +1,13 @@
 /* src/styles/app.css */
 
 body {
-    background-color: #f8f9fa;
+    background-color: #E5E3DC;
     font-family: "Segoe UI", Roboto, sans-serif;
     color: #333;
   }
   
   h1, h2 {
-    color: #343a40;
+    color: #303636;
   }
   
   .card {
@@ -23,13 +23,22 @@ body {
   
   .btn {
     border-radius: 8px;
+    background-color: #D4967D;
+    border: #D4967D
   }
-  
+  .btn:hover {
+    background-color: #C77D6D;
+  }
+  .btn:active {
+    background-color: #C77D6D;
+  }
   input.form-control {
     border-radius: 6px;
   }
-  
-  hr {
-    border-top: 1px solid #dee2e6;
+
+  .data{
+    background-color: #E5E3DC;
+    border-radius: 12px;
+    padding: 20px;
   }
   
