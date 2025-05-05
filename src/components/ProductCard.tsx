@@ -43,7 +43,7 @@ const ProductCard = ({ product, onSold }: Props) => {
           <strong>Stock:</strong> {product.stock}
         </p>
 
-        {product.stock >= 0 && (
+        {product.stock > 0 && (
           <>
             <div className="input-group mb-2">
               <input

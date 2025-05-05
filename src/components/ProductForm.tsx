@@ -15,7 +15,7 @@ const ProductForm = ({ onAdded }: Props) => {
     stock: 0,
   });
 
-  const category = ["Collar", "Aretes", "Pulsera", "Anillo", "Broche", "Gargantilla", "Diadema", "Brazalete", "Llavero", "Dije", "Aros"];
+  const category = ["Collar", "Aretes", "Pulsera", "Anillo", "Broche", "Gargantilla", "Diadema", "Brazalete", "Llavero", "Dije",];
   
 
   const [error, setError] = useState("");

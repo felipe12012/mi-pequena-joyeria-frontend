@@ -29,7 +29,7 @@ body {
   .btn:hover {
     background-color: #C77D6D;
   }
-  .btn:active {
+  .btn:active , button.btn:active, .btn:focus:active {
     background-color: #C77D6D;
   }
   input.form-control {
