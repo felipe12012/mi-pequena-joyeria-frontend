@@ -36,9 +36,9 @@ body {
     border-radius: 6px;
   }
 
-  .data{
-    background-color: #E5E3DC;
-    border-radius: 12px;
-    padding: 20px;
-  }
+ .logo {
+    width: 10rem;
+    height: auto;
+    margin: 0 auto;
+ }
   
